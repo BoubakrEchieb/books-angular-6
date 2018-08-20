@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"
+           routerLink="books"
+            *ngIf="isAuth"
+           routerLinkActive="Active">
+          Livres
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="auth/signup"
+           *ngIf="!isAuth"
+           routerLinkActive="Active">
+          Créer un compte
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLinkActive="Active"
+           *ngIf="!isAuth"
+           routerLink="auth/signin">Connexion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           *ngIf="isAuth"
+            style="cursor:pointer"
+           (click)="onSignout()">Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
